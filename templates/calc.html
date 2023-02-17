@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href='{{ url_for("static", filename="css/calc.css") }}'>{% endblock %}
+{% block title %} Calculator {% endblock %}
+{% block content%}
+	<div class="container">
+<form name="form1" class="calci" action="calc.html" method="post">
+	<input type="text" disabled name="answer" class="di" id="display">
+    <br>
+    <br>
+    <input type="button" class="btnDesignu" value="C" onclick="form1.answer.value=''">
+    <input type="button" class="btnDesignu" value="<" onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)">
+    <input type="button" class="btnDesignu" value="00" onclick="form1.answer.value+=' 00'">
+    <input type="button" class="btnDesignu" value="000" onclick="form1.answer.value+=' 000'">
+    <input type="button" class="bopDesign" value="/" onclick="form1.answer.value+=' /'">
+    <br>
+    <br>
+	<input type="button" class="btnDesign" value="7" onclick="form1.answer.value+=' 7'">
+	<input type="button" class="btnDesign" value="8" onclick="form1.answer.value+=' 8'">
+	<input type="button" class="btnDesign" value="9" onclick="form1.answer.value+=' 9'">
+	<input type="button" class="bopDesign" value="+" onclick="form1.answer.value+=' +'">
+    <br>
+    <br>
+	<input type="button" class="btnDesign" value="4" onclick="form1.answer.value+=' 4'">
+	<input type="button" class="btnDesign" value="5" onclick="form1.answer.value+=' 5'">
+	<input type="button" class="btnDesign" value="6" onclick="form1.answer.value+=' 6'">
+	<input type="button" class="bopDesign" value="-" onclick="form1.answer.value+=' -'">
+    <br>
+    <br>
+	<input type="button" class="btnDesign" value="1" onclick="form1.answer.value+=' 1'">
+	<input type="button" class="btnDesign" value="2" onclick="form1.answer.value+=' 2'">
+	<input type="button" class="btnDesign" value="3" onclick="form1.answer.value+=' 3'">
+	<input type="button" class="bopDesign" value="*" onclick="form1.answer.value+=' *'">
+    <br>
+    <br>
+    <input type="button" class="btnDesign" value="." onclick="form1.answer.value+=' .'">
+	<input type="button" class="btnDesign0" value="0" onclick="form1.answer.value+=' 0'">
+	 <input type="button" class="bnpDesign" value="=" onclick="form1.answer.value=' '+eval(form1.answer.value)">
+
+</body>
+</div>
+{% endblock %}
